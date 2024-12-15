@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Font links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Text:ital@0;1&family=Lobster&display=swap"
+        rel="stylesheet">
+    <!-- end -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+
+    <!-- css Styles -->
+    <style>
+        .navbar-glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 10px;
+        }
+
+        .menu-font,
+        .company-name, .about-desc {
+            font-family: "Anton", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .hero-welcome p {
+            font-size: 4rem;
+            font-family: "DM Serif Text", serif;
+            font-weight: 400;
+            font-style: normal;
+            text-align: center;
+            text-shadow:  1px 1px 0 rgb(151, 150, 150),
+    1px 1px 0 rgb(151, 150, 150);
+}
+
+.hero-welcome h5 {
+            font-family: "DM Serif Text", serif;
+            font-weight: 400;
+            text-align: center;
+            font-style: normal;
+            text-align: center;
+            text-shadow:  1px 1px 0 rgb(0, 0, 0),
+    1px 1px 0 rgb(0, 0, 0);
+}
+
+        /* .bd-masthead h1{
+        font-size: calc(1.525rem + 3.3vw);
+        color: pink;
+        } */
+
+        .circle-logo {
+            width: 53px;
+            height: 53px;
+            border-radius: 50%;
+            border: 5px dotted rgba(196, 12, 12, 0.628);
+            ;
+            background-color: transparent;
+        }
+
+
+
+        body {
+            height: 1000px;
+            background-color: rgba(36, 36, 189, 0.147);
+            background-image: url(Images/kitchen.jpg);
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            background-position: center;
+            background-attachment: fixed;
+            /* bg-image stays fixed */
+            background-repeat: no-repeat;
+            overflow-x: hidden;
+        }
+
+
+
+        .food-box {
+            height: 400px;
+        }
+
+        @media (max-width: 480px) {
+            .food-box {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 770px) {
+            .food-box {
+                height: 300px;
+            }
+        }
+
+        .about-section {
+            height: 400px;
+        }
+
+        /* .hero-section {
+            width: auto;
+            height: 1000px;
+            border: 5px dotted pink;
+            background-image: url(Images/keesha-s-kitchen-woC24wGXsQ8-unsplash.jpg);
+            background-size: cover;
+        } */
+
+
+
+        /* contact form */
+        .contact-intro {
+            font-family: "Anton", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+
+        }
+
+
+        .contact-us {
+            /* background-color: yellow !important; */
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .contact-form-wrapper {
+            padding: 50px 0;
+        }
+
+        .contact-form {
+            padding: 30px 40px;
+            /* background-color: blue; */
+            border-radius: 12px;
+            width: 800px;
+        }
+
+        .contact-form textarea {
+            resize: none;
+        }
+
+        .contact-form .form-input,
+        .form-text-area {
+            background-color: #f0f4f5;
+            height: 50px;
+            padding-left: 16px;
+        }
+
+        .contact-form .form-text-area {
+            background-color: #f0f4f5;
+            height: auto;
+            padding-left: 16px;
+        }
+
+        .contact-form .form-control::placeholder {
+            color: #aeb4b9;
+            font-weight: 500;
+            opacity: 1;
+        }
+
+        .contact-form .form-control:-ms-input-placeholder {
+            color: #aeb4b9;
+            font-weight: 500;
+        }
+
+        .contact-form .form-control::-ms-input-placeholder {
+            color: #aeb4b9;
+            font-weight: 500;
+        }
+
+
+
+        .contact-form .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .contact-form .description {
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .contact-form .submit-button-wrapper {
+            text-align: center;
+        }
+
+        .contact-form .submit-button-wrapper input {
+            border: none;
+            border-radius: 4px;
+            background-color: white;
+            color: black;
+            text-transform: uppercase;
+            padding: 10px 60px;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+
+        .contact-form .submit-button-wrapper input:hover {
+            background-color: #d30069;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bd-navbar navbar-glass navbar-dark sticky-top px-2 py-2">
+        <div class="container-fluid">
+            <!-- navbar logo -->
+            <div
+                class="circle-logo nav-logo ms-4 ms-sm-auto me-sm-auto d-flex justify-content-center align-items-center">
+                <img class="items-center" src="Images/asset 3.png" width="35px" height="25px" alt="">
+            </div>
+
+            <!-- Toggler button -->
+            <button class="navbar-toggler d-flex d-lg-none order-3 p-2 mx-4" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#navbarNav">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"
+                    class="bi bi-three-dots" viewBox="0 0 16 16">
+                    <path
+                        d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                </svg>
+            </button>
+
+
+
+            <!-- collapsed content -->
+            <div class="offcanvas offcanvas-lg offcanvas-end bg-danger flex-grow-1"
+                style="height: 900px;" tabindex="-1" id="navbarNav">
+                <div class="offcanvas-header px-4 pb-0 bg-danger">
+                    <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas"
+                        data-bs-target="bdNavbar" aria-label="close-button"></button>
+
+                </div>
+                <!-- left side list -->
+                <!-- OFFCANVAS BODY -->
+                <div class="offcanvas-body p-4 p-lg-0 pt-0">
+                    <!-- horizontal line -->
+                    <hr class="d-lg-none text-white-90">
+                    <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav">
+                        <li class="nav-item col-6 col-lg-auto">
+                            <a style="font-size: larger; text-shadow: 2px 2px 2px #000000;" class="company-name nav-link py-2 px-0 px-lg-2 text-light d-none d-sm-none d-md-block" href="">Yeenx Diner</a>
+                        </li>
+                    </ul>
+                    <hr class="d-lg-none text-white-90">
+
+                    <!-- right side list -->
+                    <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav ms-md-auto">
+                        <li class="nav-item col-6 col-lg-auto">
+                            <a class="nav-link py-2 px-0 px-lg-2" href="">
+                                <span class="px-lg-2 nav-text text-dark">Home</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="black"
+                                    class="bi bi-house" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
+                                </svg>
+                            </a>
+                        </li>
+
+
+
+                        <!-- horizontal line -->
+                        <li class="nav-item col-12 col-lg-auto">
+                            <hr class="d-lg-none text-white-90">
+                        </li>
+
+                        <!-- vertical line -->
+                        <li class="d-none d-sm-block d-md-none nav-item col-lg-auto px-1 py-auto">
+                            <div class="vert-line d-none d-lg-block bg-light bg-opacity-25"
+                                style="height: 33px; width: 1px; "></div>
+                        </li>
+
+                        <li class="nav-item col-6 col-lg-auto">
+                            <a class="nav-link py-2 px-0 px-lg-2" href="">
+                                <span class="px-lg-2 nav-text text-dark">Menu</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="black"
+                                    class="bi bi-menu-up" viewBox="0 0 16 16">
+                                    <path
+                                        d="M7.646 15.854a.5.5 0 0 0 .708 0L10.207 14H14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3.793zM1 9V6h14v3zm14 1v2a1 1 0 0 1-1 1h-3.793a1 1 0 0 0-.707.293l-1.5 1.5-1.5-1.5A1 1 0 0 0 5.793 13H2a1 1 0 0 1-1-1v-2zm0-5H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zM2 11.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 0-1h-8a.5.5 0 0 0-.5.5m0-4a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11a.5.5 0 0 0-.5.5m0-4a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 0-1h-6a.5.5 0 0 0-.5.5" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <!-- horizontal line -->
+                        <li class="nav-item col-12 col-lg-auto">
+                            <hr class="d-lg-none text-white-90">
+                        </li>
+
+                        <!-- vertical line -->
+                        <li class="d-none d-sm-block d-md-none nav-item col-lg-auto px-1 py-auto">
+                            <div class="vert-line d-none d-lg-block bg-light bg-opacity-25"
+                                style="height: 33px; width: 1px; "></div>
+                        </li>
+
+                        <li class="nav-item col-6 col-lg-auto">
+                            <a class="nav-link py-2 px-0 px-lg-2" href="">
+                                <span class=" px-lg-2 nav-text text-dark">About Us</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="black"
+                                    class="bi bi-file-person-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2m-1 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-3 4c2.623 0 4.146.826 5 1.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-1.245C3.854 11.825 5.377 11 8 11" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <!-- horizontal line -->
+                        <li class="nav-item col-12 col-lg-auto">
+                            <hr class="d-lg-none text-white-90">
+                        </li>
+
+                        <!-- vertical line -->
+                        <li class="d-none d-sm-block d-md-none nav-item col-lg-auto px-1 py-auto">
+                            <div class="vert-line d-none d-lg-block bg-light bg-opacity-25"
+                                style="height: 33px; width: 1px; "></div>
+                        </li>
+
+                        <li class="nav-item col-6 col-lg-auto">
+                            <a class="nav-link py-2 px-0 px-lg-2" href="">
+                                <span class="px-lg-2 nav-text text-dark">Contact</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="black"
+                                    class="bi bi-telephone" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
+                                </svg>
+                            </a>
+                        </li>
+
+
+                        <!-- horizontal line -->
+                        <li class="nav-item col-12 col-lg-auto">
+                            <hr class="d-lg-none text-white-90">
+                        </li>
+
+                        <!-- vertical line -->
+                        <li class="d-none d-sm-block d-md-none nav-item col-lg-auto px-1 py-auto">
+                            <div class="vert-line d-none d-lg-block bg-light bg-opacity-25"
+                                style="height: 33px; width: 1px; "></div>
+                        </li>
+
+                        <li class="nav-item col-6 col-lg-auto">
+                            <!-- <a class="nav-link" style="text-decoration: none;" href=""> -->
+                            <button type="button" class="btn btn-link nav-link px-0 px-lg-2  dropdown-toggle"
+                                data-bs-toggle="dropdown" aria-expanded="false" style="color: black;"
+                                data-bs-display="static">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"
+                                    class="bi bi-sun-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708" />
+                                </svg>
+                                <span class="d-lg-none" aria-hidden="true">Toggle Mode</span>
+                            </button>
+                            <!-- </a> -->
+                        </li>
+                    </ul>
+
+                    <!-- right  side end -->
+                </div>
+            </div>
+    </nav>
+
+
+
+
+    <!-- HERO SECTION -->
+    <div class="hero-section">
+        <!-- <div class="bd-masthead mb-3"> -->
+        <div class="container-xl px-4">
+            <div style="margin-top: 70px;" class="hero-welcome text-center text-light">
+                <p>Taste the Heart of Nigeria</p>
+                <h5 class="bg-warning rounded-5 py-2">- Explore our Menu below -</h5>
+            </div>
+
+            <div class="container-xl pt-3 d-lg-flex py-0 py-sm-4 row justify-content-center text-center bg-light mx-auto"
+                style=" margin-top: 150px; border-radius: 20px; border: 2px dotted black;">
+
+                <h1 class="menu-font text-dark fw-800 mb-4 rounded-5">Menu</h1>
+
+                <!-- First column with description at the bottom -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 bg-light mx-4 rounded-4 d-flex flex-column food-box"
+                    style=" background-image: url(Images/hero-food-2.jpg); background-size: cover;">
+                    <div class="mt-auto text-white p-3 rounded-3 bg-warning" style="width: auto;">
+                        <span
+                            class="text-danger border border-bottom-0 border-light-subtle rounded-top pt-sm-0 p-md-1 p-0 fs-6">White
+                            rice & Seafood sauce
+                        </span>
+                        <p class="mb-0 pb-0">Our Popular seafood sauce & rice rice</p>
+                        <button class="border-0 rounded p-2 bg-danger mt-md-1 mt-0 text-light">₦15,000</button>
+                    </div>
+                </div>
+
+                <!-- Second column with description at the bottom -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 bg-light mx-4 rounded-4 d-flex flex-column food-box"
+                    style=" background-image: url(Images/hero-food-1.jpg); background-size: cover;">
+                    <div class="mt-auto text-white p-3 rounded-3 bg-warning" style="width: auto;">
+                        <span
+                            class="text-danger border border-bottom-0 border-light-subtle rounded-top pt-sm-0 p-md-1 p-0 fs-6">Moi
+                            Moi </span>
+                        <p class="mb-0 pb-0">Freshly made moimoi with egg filling</p>
+                        <button class="border-0 rounded p-2 bg-danger mt-md-1 mt-0 text-light">₦4,000</button>
+                    </div>
+                </div>
+
+                <!-- Third column with description at the bottom -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 bg-light mx-4 rounded-4 d-flex flex-column food-box"
+                    style=" background-image: url(Images/hero-food-3.jpg); background-size: cover;">
+                    <div class="mt-auto text-white p-3 rounded-3 bg-warning" style="width: auto;">
+                        <span
+                            class="text-danger border border-bottom-0 border-light-subtle rounded-top pt-sm-0 p-md-1 p-0 fs-6">Jollof
+                            Rice & Grilled Chicken </span>
+                        <p class="mb-0 pb-0">Special jollof rice, spicy grilled chicken</p>
+                        <button class="border-0 rounded p-2 bg-danger mt-md-1 mt-0 text-light">₦10,500</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- </div> -->
+    </div>
+
+
+
+    <!-- ABOUT & CONTACT SECTION -->
+    <div class="About-section mb-4">
+        <!-- <div class="bd-masthead mb-3"> -->
+        <div class="container-xl px-4">
+            <div class="container-xl pt-3 d-lg-flex py-0 py-sm-4 row justify-content-center text-center bg-light mx-auto"
+                style="border-radius: 20px; border: 2px dotted black;">
+
+                <!-- text -->
+                <div
+                    class="col-12 col-lg-6 bg-light px-4 align-items-center justify-content-center text-center mx-0 rounded-4 d-flex flex-column about-section">
+                    <hr class="w-25 text-white-90 border-2">
+                    <h5 class="about-desc fw-800">About Us.</h5>
+                    <hr class="w-25 text-white-90 border-2 mb-5">
+                    <p>Yeenx Diner is a vibrant Nigerian restaurant in the heart of Lagos, offering authentic flavors
+                        with a modern twist.
+                        Since 2015, it has been a go-to spot for dishes like suya-spiced grills, signature jollof rice,
+                        crispy plantain chips,
+                        and rich efo riro. Yeenx Diner blends tradition and innovation to create a truly
+                        memorable dining experience.</p>
+
+                </div>
+
+                <!-- image -->
+
+                <div class="col-12 col-lg-6 bg-light mx-0 rounded-4 d-flex flex-column about-section"
+                    style=" background-image: url(Images/hero-food-3.jpg); background-size: cover;">
+
+                </div>
+
+
+                <!-- Contact form -->
+
+
+                <div class="contact-us my-4">
+                    <hr class="border-dark border-2 pb-0 mb-0 mt-5">
+                    <h3 class="contact-intro mt-4 mb-0 ">Any Questions?</h3>
+                    <div class="contact-form-wrapper d-flex justify-content-center">
+                        <form action="#" class="contact-form bg-danger">
+                            <h5 class="title text-light">Contact us</h5>
+                            <p class="description text-light">Feel free to contact us if you need any assistance.
+                            </p>
+                            <div>
+                                <input type="text" class="form-control rounded border-white mb-3 form-input" id="name"
+                                    placeholder="Name" required>
+                            </div>
+                            <div>
+                                <input type="email" class="form-control rounded border-white mb-3 form-input"
+                                    placeholder="Email" required>
+                            </div>
+                            <div>
+                                <textarea id="message" class="form-control rounded border-white mb-3 form-text-area"
+                                    rows="5" cols="30" placeholder="Message" required></textarea>
+                            </div>
+                            <div class="submit-button-wrapper">
+                                <input type="submit" value="Send">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- contact form end -->
+
+
+            </div>
+        </div>
+        <!-- </div> -->
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-4 mt-4 col-lg-4 text-center text-sm-start">
+                    <div class="information">
+                        <h6 class="footer-heading text-uppercase text-black fw-bold">Information</h6>
+                        <ul class="list-unstyled footer-link mt-2">
+                            <li class="mb-1"><a href="https://codepen.io/Gaurav-Rana-the-reactor"
+                                    class="text-black text-decoration-none fw-semibold">Order</a></li>
+                            <li class="mb-1"><a href="https://codepen.io/Gaurav-Rana-the-reactor"
+                                    class="text-black text-decoration-none fw-semibold">Bookings</a></li>
+                            <li class="mb-1"><a href="https://codepen.io/Gaurav-Rana-the-reactor"
+                                    class="text-black text-decoration-none fw-semibold">Jobs</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 mt-4 col-lg-4 text-center text-sm-start">
+                    <div class="social">
+                        <h6 class="footer-heading text-uppercase text-black fw-bold">Social</h6>
+                        <ul class="list-inline my-2">
+                            <li class="list-inline-item"><a class="me-2 mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="black"
+                                        class="bi bi-instagram" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                                    </svg>
+                                </a></li>
+                            <li class="list-inline-item"><a class="me-2 mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="black"
+                                        class="bi bi-whatsapp" viewBox="0 0 16 16">
+                                        <path
+                                            d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                                    </svg>
+                                </a></li>
+                            <li class="list-inline-item"><a class=" mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="black"
+                                        class="bi bi-facebook" viewBox="0 0 16 16">
+                                        <path
+                                            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                                    </svg>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6 mt-4 col-lg-4 text-center text-sm-start">
+                    <div class="contact">
+                        <h6 class="footer-heading text-uppercase text-black fw-bold">Address</h6>
+                        <a class="mt-4 m-0 text-black mb-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-geo-alt" viewBox="0 0 16 16">
+                                <path
+                                    d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+                                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                            </svg> Phase one, 4b Emma Abimbola Cole, Eti-Osa, Lekki 105102, Lagos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center bg-danger text-white mt-4 p-1">
+            <p class="mb-0 fw-bold">2024 © Yeenx Diner, All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+
+</html>
